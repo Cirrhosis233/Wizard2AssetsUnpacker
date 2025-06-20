@@ -82,6 +82,65 @@ Wizard2AssetsUnpacker.exe asset download "asset_name" --manifest "assetbundle.Ch
 - `Config.cs` - Configuration handling
 - `Program.cs` - CLI entry point
 
+## Configuration File (`Config.json`)
+
+The application uses a `Config.json` file for runtime configuration. This file is required and must be placed in the output directory.
+
+**Do not share your actual configuration values.**
+
+### Structure
+
+The configuration file is a JSON object with the following fields:
+
+- `AssetBundleAddress`: URL template for asset bundle downloads
+- `ManifestAddress`: URL template for manifest downloads
+- `VersionAddress`: URL for version info
+- `CommonHeader`: Common request header (string)
+- `RoutingHeader`: Routing header (string)
+- `AppVersion`: Application version (string)
+- `DeviceUUID`: Device UUID (string)
+- `MD5Salt`: Salt for MD5 operations (string)
+- `AssetBundleBaseKeys`: Base keys for asset bundle decryption (string)
+- `ClientId`: Client identifier (number)
+- `DeviceInfo`: Object containing device information:
+  - `Platform`: Platform identifier (string or number)
+  - `Device`: Device identifier (string or number)
+  - `DeviceName`: Name of the device (string)
+  - `PlatformOSVersion`: OS version (string)
+  - `GPUVendor`: GPU vendor (string)
+  - `GraphicsMemoryMB`: Graphics memory in MB (string or number)
+  - `ProcessorType`: Processor type (string)
+
+**Note:** All values are required for proper operation. Do not commit your real configuration to public repositories.
+
+### Example
+
+Below is an example structure for `Config.json`. **Do not use real values from your environment.**
+
+```json
+{
+  "AssetBundleAddress": "https://example.com/dl/assetbundles/Windows/{0}/{1}",
+  "ManifestAddress": "https://example.com/dl/manifests/Windows/{0}/assetbundle.{1}.manifest",
+  "VersionAddress": "https://example.com/version/info",
+  "CommonHeader": "your_common_header_here",
+  "RoutingHeader": "your_routing_header_here",
+  "AppVersion": "1.0.0",
+  "DeviceUUID": "your-device-uuid",
+  "MD5Salt": "your-md5-salt",
+  "AssetBundleBaseKeys": "your-base-keys",
+  "ClientId": 1234567890,
+  "DeviceInfo": {
+    "Platform": "4",
+    "Device": "3",
+    "DeviceName": "Example Device Name",
+    "PlatformOSVersion": "Example OS Version",
+    "GPUVendor": "Example GPU Vendor",
+    "GraphicsMemoryMB": "8192",
+    "ProcessorType": "Example Processor"
+  }
+}
+```
+
 ## License
 
 MIT License
