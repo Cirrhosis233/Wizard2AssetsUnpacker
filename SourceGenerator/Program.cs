@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -93,10 +92,8 @@ namespace SourceGenerator
                     attrBuilder.AppendJoin(",", propertyAttrArgList);
                     attrBuilder.Append(')');
                 }
-                attrBuilder.AppendLine("]");
-
+                attrBuilder.Append(']');
                 attributeList.Add(attrBuilder.ToString());
-
             }
 
             var propertiesList = new List<string>();
