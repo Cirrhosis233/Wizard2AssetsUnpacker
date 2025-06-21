@@ -1,6 +1,6 @@
 # Wizard2AssetsUnpacker
 
-A cross-platform command-line tool for unpacking and decrypting asset bundles from Wizard2 game files.
+A cross-platform command-line tool for unpacking and decrypting asset bundles from Shadowverse: Worlds Beyond game files.
 
 ## Features
 
