@@ -1,50 +1,38 @@
 ﻿using MasterMemory;
-using MessagePack;
 using Newtonsoft.Json;
 using System.CommandLine;
 using System.Security.Cryptography;
 using Wizard2AssetsUnpacker.Models;
+using Wizard2AssetsUnpacker.Models.AssetBundle;
 
 namespace Wizard2AssetsUnpacker.Classes
 {
-    [MemoryTable("asset"), MessagePackObject(false)]
-    public record ManifestAsset
+    public class Manifest
     {
+        public RangeView<AssetBundleLoadName> AssetBundleLoadName { get; set; }
+        public RangeView<ManifestAsset> ManifestAsset { get; set; }
+        public RangeView<ManifestConfig> ManifestConfig { get; set; }
+        public RangeView<ManifestRawAsset> ManifestRawAsset { get; set; }
 
-        // Properties
-        [Key(0)]
-        [StringComparisonOption(StringComparison.OrdinalIgnoreCase)]
-        [PrimaryKey(0)]
-        public string Name { get; set; }
-        [Key(1)]
-        [StringComparisonOption(StringComparison.Ordinal)]
-        [SecondaryKey(0, 0)]
-        public string Hash { get; set; }
-        [Key(2)]
-        [SecondaryKey(3, 0)]
-        public int AssetId { get; set; }
-        [Key(3)]
-        public int[] AllDependencies { get; set; }
-        [Key(4)]
-        public long Key { get; set; }
-        [Key(5)]
-        public int Size { get; set; }
-        [SecondaryKey(1, 0)]
-        [NonUnique]
-        [StringComparisonOption(StringComparison.Ordinal)]
-        [Key(6)]
-        public string Category { get; set; }
-        [Key(7)]
-        [SecondaryKey(2, 0)]
-        [NonUnique]
-        public int Group { get; set; }
-        [Key(8)]
-        public ulong CheckSum { get; set; }
+        public static Manifest FromMemoryDatabase(MemoryDatabase db)
+        {
+            return new Manifest()
+            {
+                AssetBundleLoadName = db.AssetBundleLoadNameTable.All,
+                ManifestRawAsset = db.ManifestRawAssetTable.All,
+                ManifestConfig = db.ManifestConfigTable.All,
+                ManifestAsset = db.ManifestAssetTable.All,
+            };
+        }
+
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 
     public class ManifestCommand
     {
-
         public static MemoryDatabase Deserialize(byte[] bytes)
         {
             var dataLength = bytes.Length - MD5.HashSizeInBytes;
@@ -78,7 +66,7 @@ namespace Wizard2AssetsUnpacker.Classes
                 case FormatOption.Json:
                     {
                         var db = Deserialize(bytes);
-                        File.WriteAllText($"{dest}.json", JsonConvert.SerializeObject(db.ManifestAssetTable.All));
+                        File.WriteAllText($"{dest}.json", Manifest.FromMemoryDatabase(db).Serialize());
                         break;
                     }
             }
