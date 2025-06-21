@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.CommandLine;
 using System.Security.Cryptography;
 using Wizard2AssetsUnpacker.Models;
-using Wizard2AssetsUnpacker.Models.AssetBundle;
+using Wizard2AssetsUnpacker.Models.Generated;
 
 namespace Wizard2AssetsUnpacker.Classes
 {

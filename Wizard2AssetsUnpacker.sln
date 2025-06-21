@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wizard2AssetsUnpacker", "Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibConeshell", "LibConeshell\LibConeshell\LibConeshell.csproj", "{18F72C2B-2ACE-42F7-894C-991361D32C7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerator", "SourceGenerator\SourceGenerator.csproj", "{55EB02B3-7C91-45E5-B52E-E77D1343A565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{18F72C2B-2ACE-42F7-894C-991361D32C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F72C2B-2ACE-42F7-894C-991361D32C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F72C2B-2ACE-42F7-894C-991361D32C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55EB02B3-7C91-45E5-B52E-E77D1343A565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55EB02B3-7C91-45E5-B52E-E77D1343A565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55EB02B3-7C91-45E5-B52E-E77D1343A565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55EB02B3-7C91-45E5-B52E-E77D1343A565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

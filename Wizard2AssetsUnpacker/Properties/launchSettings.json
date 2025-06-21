@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Wizard2AssetsUnpacker": {
+      "commandName": "Project",
+      "commandLineArgs": " master --manifest .\\assetbundle.Chs.manifest"
+    }
+  }
+}
