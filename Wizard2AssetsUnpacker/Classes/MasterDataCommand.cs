@@ -5,6 +5,14 @@ namespace Wizard2AssetsUnpacker.Classes
 {
     public class MasterDataCommand
     {
+        private static readonly List<string> ExcludedTables = [
+            "AssetBundleLoadNameTable",
+            "ManifestAssetTable",
+            "ManifestConfigTable",
+            "ManifestRawAssetTable",
+            "LocalizeTextTable"
+        ];
+
         public static async Task<int> Invoke(MemoryDatabase manifestDB)
         {
             var uri = Utils.GetDownloadUriByName(manifestDB, "Master/mastermemory.bytes");
@@ -38,6 +46,7 @@ namespace Wizard2AssetsUnpacker.Classes
             foreach (var param in ctor.GetParameters())
             {
                 var tableName = param.ParameterType.Name;
+                if (ExcludedTables.Contains(tableName)) continue;
                 var table = masterDatabase.GetType().GetProperty(tableName).GetValue(masterDatabase, null);
                 var tableView = table.GetType().GetProperty("All").GetValue(table, null);
                 File.WriteAllText($"./MasterData/{tableName}.json", JsonConvert.SerializeObject(tableView, Formatting.Indented));
