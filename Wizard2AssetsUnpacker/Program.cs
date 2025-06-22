@@ -18,6 +18,7 @@ namespace Wizard2AssetsUnpacker
             rootCommand.Subcommands.Add(VersionCommand.GetCommand());
             rootCommand.Subcommands.Add(AssetCommand.GetCommand());
             rootCommand.Subcommands.Add(MasterDataCommand.GetCommand());
+            rootCommand.Subcommands.Add(LocalizeCommand.GetCommand());
 
             return rootCommand.Parse(args).Invoke();
         }
