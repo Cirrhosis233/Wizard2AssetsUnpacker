@@ -8,7 +8,7 @@ namespace Wizard2AssetsUnpacker.Classes
         public static void Invoke(string path)
         {
             var db = new MemoryDatabase(File.ReadAllBytes(path), false);
-            File.WriteAllText(Path.ChangeExtension(path, ".json"), JsonConvert.SerializeObject(db.LocalizeTextTable.All));
+            File.WriteAllText(Path.ChangeExtension(path, ".json"), JsonConvert.SerializeObject(db.LocalizeTextTable.All, Formatting.Indented));
         }
 
         public static Command GetCommand()
