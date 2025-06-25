@@ -27,6 +27,8 @@ namespace Wizard2AssetsUnpacker
         public string AssetBundleAddress { get; set; }
         public string ManifestAddress { get; set; }
         public string VersionAddress { get; set; }
+        public string Sqlite3mcKey { get; set; }
+        public string Sqlite3mcBaseKey { get; set; }
 
         private static readonly Lazy<Config> lazy = new(() => JsonConvert.DeserializeObject<Config>(File.ReadAllText(Constants.ConfigPath))!);
 

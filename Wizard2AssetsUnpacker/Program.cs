@@ -19,6 +19,7 @@ namespace Wizard2AssetsUnpacker
             rootCommand.Subcommands.Add(AssetCommand.GetCommand());
             rootCommand.Subcommands.Add(MasterDataCommand.GetCommand());
             rootCommand.Subcommands.Add(LocalizeCommand.GetCommand());
+            rootCommand.Subcommands.Add(MetaDBCommand.GetCommand());
 
             return rootCommand.Parse(args).Invoke();
         }
