@@ -61,6 +61,12 @@ Download and decrypt assetbundles. Has subcommands:
 - `name <assetName>` (argument): The asset name to download (from manifest)
 - `--manifest <path>` (required): Path of asset manifest to get decrypt key
 
+### metadb
+
+Decrypt game created meta database.
+
+- `path <path>` (argument): The path to the meta database created by the game
+
 ## Example
 
 ```powershell
@@ -75,6 +81,9 @@ Wizard2AssetsUnpacker.exe asset decrypt --file "JKCNHLX5FIZINWEDTT2ND2WU4Y" --ma
 
 # Download an assetbundle by name
 Wizard2AssetsUnpacker.exe asset download "asset_name" --manifest "assetbundle.Chs.manifest"
+
+# Decrypt a meta database
+Wizard2AssetsUnpacker.exe metadb "path/to/meta.db"
 ```
 
 ## Project Structure
@@ -98,13 +107,15 @@ The configuration file is a JSON object with the following fields:
 - `AssetBundleAddress`: URL template for asset bundle downloads (string)
 - `ManifestAddress`: URL template for manifest downloads (string)
 - `VersionAddress`: URL for version info (string)
-- `CommonHeader`: Common request header (string)
+- `CommonHeader`: Common request header (string, base64 encoded)
 - `RoutingHeader`: Routing header (string)
 - `AppVersion`: Application version (string)
 - `DeviceUUID`: Device UUID (string)
 - `MD5Salt`: Salt for MD5 operations (string)
-- `AssetBundleBaseKeys`: Base keys for asset bundle decryption (string)
-- `ClientId`: Client identifier (number)
+- `AssetBundleBaseKeys`: Base keys for asset bundle decryption (string, base64 encoded)
+- `Sqlite3mcKey`: Key for SQLite meta database decryption (string, base64 encoded)
+- `Sqlite3mcBaseKey`: Base key for SQLite meta database decryption (string, base64 encoded)
+- `ClientId`: Client identifier / user id (long)
 - `DeviceInfo`: Object containing device information:
   - `Platform`: Platform identifier (number)
     - Available values: `0` (NONE), `1` (IOS), `2` (ANDROID), `4` (STEAM), `5` (EPIC)
@@ -125,12 +136,14 @@ Below is an example structure for `Config.json`.
   "AssetBundleAddress": "https://example.com/dl/assetbundles/Windows/{0}/{1}",
   "ManifestAddress": "https://example.com/dl/manifests/Windows/{0}/assetbundle.{1}.manifest",
   "VersionAddress": "https://example.com/version/info",
-  "CommonHeader": "your_common_header_here",
+  "CommonHeader": "your-common-header-base64",
   "RoutingHeader": "your_routing_header_here",
   "AppVersion": "1.0.0",
   "DeviceUUID": "your-device-uuid",
   "MD5Salt": "your-md5-salt",
-  "AssetBundleBaseKeys": "your-base-keys",
+  "AssetBundleBaseKeys": "your-base-keys-base64",
+  "Sqlite3mcKey": "your-sqlite3mc-key-base64",
+  "Sqlite3mcBaseKey": "your-sqlite3mc-base-key-base64",
   "ClientId": 1234567890,
   "DeviceInfo": {
     "Platform": 4,
