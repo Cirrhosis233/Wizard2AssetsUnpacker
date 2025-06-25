@@ -65,7 +65,7 @@ Download and decrypt assetbundles. Has subcommands:
 
 Decrypt game created meta database.
 
-- `path <path>` (argument): The path to the meta database created by the game
+- `<path>` (argument): The path to the meta database created by the game
 
 ## Example
 
