@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Wizard2AssetsUnpacker.Models;
 
 namespace Wizard2AssetsUnpacker
 {
     public class DeviceInfo
     {
-        public string Platform { get; set; }
-        public string Device { get; set; }
+        public Platform Platform { get; set; }
+        public Device Device { get; set; }
         public string DeviceName { get; set; }
         public string PlatformOSVersion { get; set; }
         public string GPUVendor { get; set; }

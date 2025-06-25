@@ -35,14 +35,17 @@ A cross-platform command-line tool for unpacking and decrypting asset bundles fr
 Download manifest from server.
 
 - `--version <version>` (required): The asset manifest version to download
-- `--variant <LangType>`: The asset manifest variant to download (default: Chs)
-- `--format <FormatOption>`: The format to save the manifest (default: Raw; options: Raw, Json)
+- `--variant <LangType>`: The asset manifest variant to download (default: chs)
+  - Available values: `jpn` (1), `eng` (2), `kor` (3), `chs` (4), `cht` (5)
+- `--format <FormatOption>`: The format to save the manifest (default: Raw)
+  - Available values: `raw` (0), `json` (1)
 
 ### version
 
 Fetch current assets and asset manifest version.
 
-- `--format <FormatOption>`: The format to save the version info (default: Json; options: Raw, Json)
+- `--format <FormatOption>`: The format to save the version info (default: Json)
+  - Available values: `raw` (0), `json` (1)
 
 ### asset
 
@@ -86,15 +89,15 @@ Wizard2AssetsUnpacker.exe asset download "asset_name" --manifest "assetbundle.Ch
 
 The application uses a `Config.json` file for runtime configuration. This file is required and must be placed in the output directory.
 
-**Do not share your actual configuration values.**
+**Do not share your account associated values like DeviceInfo and ClientId.**
 
 ### Structure
 
 The configuration file is a JSON object with the following fields:
 
-- `AssetBundleAddress`: URL template for asset bundle downloads
-- `ManifestAddress`: URL template for manifest downloads
-- `VersionAddress`: URL for version info
+- `AssetBundleAddress`: URL template for asset bundle downloads (string)
+- `ManifestAddress`: URL template for manifest downloads (string)
+- `VersionAddress`: URL for version info (string)
 - `CommonHeader`: Common request header (string)
 - `RoutingHeader`: Routing header (string)
 - `AppVersion`: Application version (string)
@@ -103,19 +106,19 @@ The configuration file is a JSON object with the following fields:
 - `AssetBundleBaseKeys`: Base keys for asset bundle decryption (string)
 - `ClientId`: Client identifier (number)
 - `DeviceInfo`: Object containing device information:
-  - `Platform`: Platform identifier (string or number)
-  - `Device`: Device identifier (string or number)
+  - `Platform`: Platform identifier (number)
+    - Available values: `0` (NONE), `1` (IOS), `2` (ANDROID), `4` (STEAM), `5` (EPIC)
+  - `Device`: Device identifier (number)
+    - Available values: `1` (IOS), `2` (ANDROID), `3` (WINDOWS), `4` (MAC)
   - `DeviceName`: Name of the device (string)
   - `PlatformOSVersion`: OS version (string)
   - `GPUVendor`: GPU vendor (string)
-  - `GraphicsMemoryMB`: Graphics memory in MB (string or number)
+  - `GraphicsMemoryMB`: Graphics memory in MB (string)
   - `ProcessorType`: Processor type (string)
-
-**Note:** All values are required for proper operation. Do not commit your real configuration to public repositories.
 
 ### Example
 
-Below is an example structure for `Config.json`. **Do not use real values from your environment.**
+Below is an example structure for `Config.json`.
 
 ```json
 {
@@ -130,8 +133,8 @@ Below is an example structure for `Config.json`. **Do not use real values from y
   "AssetBundleBaseKeys": "your-base-keys",
   "ClientId": 1234567890,
   "DeviceInfo": {
-    "Platform": "4",
-    "Device": "3",
+    "Platform": 4,
+    "Device": 3,
     "DeviceName": "Example Device Name",
     "PlatformOSVersion": "Example OS Version",
     "GPUVendor": "Example GPU Vendor",
