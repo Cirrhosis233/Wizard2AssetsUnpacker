@@ -37,14 +37,14 @@ Download manifest from server.
 - `--version <version>` (required): The asset manifest version to download
 - `--variant <LangType>`: The asset manifest variant to download (default: chs)
   - Available values: `jpn` (1), `eng` (2), `kor` (3), `chs` (4), `cht` (5)
-- `--format <FormatOption>`: The format to save the manifest (default: Raw)
+- `--format <FormatOption>`: The format to save the manifest (default: raw)
   - Available values: `raw` (0), `json` (1)
 
 ### version
 
 Fetch current assets and asset manifest version.
 
-- `--format <FormatOption>`: The format to save the version info (default: Json)
+- `--format <FormatOption>`: The format to save the version info (default: json)
   - Available values: `raw` (0), `json` (1)
 
 ### asset
@@ -65,10 +65,10 @@ Download and decrypt assetbundles. Has subcommands:
 
 ```powershell
 # Download manifest
-Wizard2AssetsUnpacker.exe manifest --version 123456 --variant Chs --format Json
+Wizard2AssetsUnpacker.exe manifest --version 123456 --variant chs --format json
 
 # Fetch version info
-Wizard2AssetsUnpacker.exe version --format Json
+Wizard2AssetsUnpacker.exe version --format json
 
 # Decrypt an assetbundle
 Wizard2AssetsUnpacker.exe asset decrypt --file "JKCNHLX5FIZINWEDTT2ND2WU4Y" --manifest "assetbundle.Chs.manifest"
