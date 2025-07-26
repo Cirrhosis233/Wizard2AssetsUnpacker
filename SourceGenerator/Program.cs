@@ -178,6 +178,7 @@ namespace Wizard2AssetsUnpacker.Models.Generated
 
             Type[] TableTypes = [
                 Domain.GetType("Wizard2.Domain.MasterData"),
+                Domain.GetType("MasterMemory.MemoryDatabase"),
                 CuteAssetBundle.GetType("Cute.AssetBundle.MemoryDatabase"),
                 CuteLocalize.GetType("Cute.Localize.MemoryDatabase")
             ];
@@ -186,14 +187,13 @@ namespace Wizard2AssetsUnpacker.Models.Generated
 
             foreach (Type t in TableTypes)
             {
-                foreach (var property in t.GetProperties())
+                foreach (var property in t.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.GetProperty))
                 {
                     var baseType = property.PropertyType.BaseType;
                     if (baseType.Name == "TableBase`1")
                     {
                         var genericArg = baseType.GetGenericArguments()[0];
                         var classDef = GetClassDef(genericArg);
-
                         ClassDefs.TryAdd(genericArg.Name, classDef);
                     }
                 }

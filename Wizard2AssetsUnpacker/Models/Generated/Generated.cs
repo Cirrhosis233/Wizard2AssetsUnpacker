@@ -2679,6 +2679,353 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
 
     [MessagePackObject(false)]
+    [MemoryTable("AiMaster")]
+    public class AiMaster
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("AvatarClothSeTypeMaster")]
+    public class AvatarClothSeTypeMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public string ClothSeType { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("AvatarOverlapMaster")]
+    public class AvatarOverlapMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int PrimaryId { get; set; }
+        [Key(1)]
+        public int CategoryId { get; set; }
+        [Key(2)]
+        public int TargetCategoryId { get; set; }
+        [Key(3)]
+        public int LengthId { get; set; }
+    }
+
+    [MemoryTable("AvatarPartsPatternMaster")]
+    [MessagePackObject(false)]
+    public class AvatarPartsPatternMaster
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int PatternId { get; set; }
+        [Key(1)]
+        public string Name { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("AvatarStepMaterials")]
+    public class AvatarStepMaterials
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public string Material { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("AvatarStepSeTypeMaster")]
+    public class AvatarStepSeTypeMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public string StepSeType { get; set; }
+    }
+
+    [MemoryTable("BattlePassMissionMaster")]
+    [MessagePackObject(false)]
+    public class BattlePassMissionMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int RewardType { get; set; }
+        [Key(2)]
+        public int RewardDetailId { get; set; }
+        [Key(3)]
+        public int RewardNumber { get; set; }
+    }
+
+    [MemoryTable("ChatStampMaster")]
+    [MessagePackObject(false)]
+    public class ChatStampMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int ChatStampId { get; set; }
+        [Key(1)]
+        public string MessageTextId { get; set; }
+    }
+
+    [MemoryTable("CountryData")]
+    [MessagePackObject(false)]
+    public class CountryData
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int CountryId { get; set; }
+        [Key(1)]
+        public string CategoryTextId { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("DefaultAjitoHologram")]
+    public class DefaultAjitoHologram
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int SlotNum { get; set; }
+        [Key(2)]
+        public int Type { get; set; }
+        [Key(3)]
+        public int DetailId { get; set; }
+        [Key(4)]
+        public int ExtraId { get; set; }
+    }
+
+    [MemoryTable("LobbyTreasureBoxQuestDailyRewardMaster")]
+    [MessagePackObject(false)]
+    public class LobbyTreasureBoxQuestDailyRewardMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int Id { get; set; }
+        [NonUnique]
+        [SecondaryKey(5, 0)]
+        [Key(1)]
+        public int ScheduleId { get; set; }
+        [Key(2)]
+        public int Point { get; set; }
+        [Key(3)]
+        public int RewardType { get; set; }
+        [Key(4)]
+        public int RewardDetailId { get; set; }
+        [Key(5)]
+        public int RewardNumber { get; set; }
+    }
+
+    [MemoryTable("LobbyTreasureBoxRewardGroup")]
+    [MessagePackObject(false)]
+    public class LobbyTreasureBoxRewardGroup
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public string Name { get; set; }
+    }
+
+    [MemoryTable("MetaverseFixObjectMaster")]
+    [MessagePackObject(false)]
+    public class MetaverseFixObjectMaster
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int MetaverseFixObjectId { get; set; }
+        [Key(1)]
+        public int MapId { get; set; }
+        [Key(2)]
+        public int DefaultId { get; set; }
+        [Key(3)]
+        public Single PositionX { get; set; }
+        [Key(4)]
+        public Single PositionY { get; set; }
+        [Key(5)]
+        public Single PositionZ { get; set; }
+        [Key(6)]
+        public Single RotationX { get; set; }
+        [Key(7)]
+        public Single RotationY { get; set; }
+        [Key(8)]
+        public Single RotationZ { get; set; }
+        [Key(9)]
+        public Single DefaultScaleX { get; set; }
+        [Key(10)]
+        public Single DefaultScaleY { get; set; }
+        [Key(11)]
+        public Single DefaultScaleZ { get; set; }
+        [Key(12)]
+        public int ColorId { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("MetaverseLobby")]
+    public class MetaverseLobby
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int LobbyId { get; set; }
+        [Key(1)]
+        public string Name { get; set; }
+        [Key(2)]
+        public int MapId { get; set; }
+        [Key(3)]
+        public int Type { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("MetaverseLobbyServer")]
+    public class MetaverseLobbyServer
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int LobbyServerId { get; set; }
+        [Key(1)]
+        public int LobbyId { get; set; }
+    }
+
+    [MemoryTable("MissionMaster")]
+    [MessagePackObject(false)]
+    public class MissionMaster
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int MissionType { get; set; }
+        [Key(2)]
+        public int NotificationType { get; set; }
+        [Key(3)]
+        public int GroupId { get; set; }
+        [Key(4)]
+        public int BattleType { get; set; }
+    }
+    public enum TransitionType : uint { None = 0, EventPage = 1, ExclusivePage = 2, }
+
+    [MessagePackObject(false)]
+    [MemoryTable("ParkDialog")]
+    public class ParkDialog
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int ParkDialogId { get; set; }
+        [Key(1)]
+        public int EventId { get; set; }
+        [Key(2)]
+        public ParkVenue DialogTarget { get; set; }
+        [Key(3)]
+        public int Sort { get; set; }
+        [Key(4)]
+        public string DaialogImg { get; set; }
+        [Key(5)]
+        public TransitionType TransitionType { get; set; }
+    }
+
+    [MemoryTable("Rank")]
+    [MessagePackObject(false)]
+    public class Rank
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int Type { get; set; }
+        [Key(2)]
+        public int NecessaryPoint { get; set; }
+        [Key(3)]
+        public int AccumulatePoint { get; set; }
+        [Key(4)]
+        public int LowerLimitPoint { get; set; }
+        [Key(5)]
+        public int BaseAddPoint { get; set; }
+        [Key(6)]
+        public int BaseDropPoint { get; set; }
+    }
+
+    [MessagePackObject(false)]
+    [MemoryTable("SampleA")]
+    public class SampleA
+    {
+        [Key(0)]
+        [PrimaryKey(0)]
+        public int SampleId { get; set; }
+        [Key(1)]
+        public string Name { get; set; }
+        [Key(2)]
+        public string Description { get; set; }
+        [Key(3)]
+        public int Hp { get; set; }
+        [Key(4)]
+        public Single DurationSec { get; set; }
+    }
+
+    [MemoryTable("StoryRelease")]
+    [MessagePackObject(false)]
+    public class StoryRelease
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int SectionId { get; set; }
+        [Key(2)]
+        public int EpisodeId { get; set; }
+        [Key(3)]
+        public int ChapterId { get; set; }
+        [Key(4)]
+        public int PreSectionId { get; set; }
+        [Key(5)]
+        public int PreEpisodeId { get; set; }
+        [Key(6)]
+        public int PreChapterId { get; set; }
+        [Key(7)]
+        public int ConditionId { get; set; }
+    }
+
+    [MemoryTable("StoryReward")]
+    [MessagePackObject(false)]
+    public class StoryReward
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public int SectionId { get; set; }
+        [Key(2)]
+        public int EpisodeId { get; set; }
+        [Key(3)]
+        public int ChapterId { get; set; }
+        [Key(4)]
+        public int RewardType { get; set; }
+        [Key(5)]
+        public int RewardDetailId { get; set; }
+        [Key(6)]
+        public string RewardName { get; set; }
+        [Key(7)]
+        public int RewardNumber { get; set; }
+    }
+
+    [MemoryTable("TransitionRankMaster")]
+    [MessagePackObject(false)]
+    public class TransitionRankMaster
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int TransitionRankId { get; set; }
+        [Key(1)]
+        public string IconName { get; set; }
+        [Key(2)]
+        public string RankName { get; set; }
+    }
+
+    [MessagePackObject(false)]
     [MemoryTable("assetname")]
     public class AssetBundleLoadName
     {
