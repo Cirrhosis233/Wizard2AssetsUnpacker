@@ -13,7 +13,7 @@ namespace SourceGenerator
         static string GetTypeString(PropertyInfo propertyInfo)
         {
             var name = propertyInfo.PropertyType.Name.ToString();
-            if (name == "Single") return "Single";
+            if (name.Contains("Single")) return name;
 
             return name
                 .ToLower()
