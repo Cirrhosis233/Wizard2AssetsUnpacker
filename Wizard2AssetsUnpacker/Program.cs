@@ -15,6 +15,7 @@ namespace Wizard2AssetsUnpacker
 
             RootCommand rootCommand = new("Unpacker for Shadowverse: Worlds Beyond");
             rootCommand.Subcommands.Add(ManifestCommand.GetCommand());
+            rootCommand.Subcommands.Add(ManifestCommand.GetFileCommand());
             rootCommand.Subcommands.Add(VersionCommand.GetCommand());
             rootCommand.Subcommands.Add(AssetCommand.GetCommand());
             rootCommand.Subcommands.Add(MasterDataCommand.GetCommand());

@@ -101,5 +101,40 @@ namespace Wizard2AssetsUnpacker.Classes
 
             return manifestCommand;
         }
+
+        // ─────────────────────────────────────────────────────────
+        // NEW: convert a local raw manifest file → JSON
+        // Usage:
+        //   manifest-file --input ./assetbundle.Chs.manifest
+        // Output:
+        //   ./assetbundle.Chs.manifest.json
+        // ─────────────────────────────────────────────────────────
+        private static async Task<int> InvokeFromFile(string inputPath)
+        {
+            if (!File.Exists(inputPath))
+                throw new FileNotFoundException("Input manifest not found", inputPath);
+
+            var bytes = await File.ReadAllBytesAsync(inputPath);
+            var db = Deserialize(bytes);
+            var json = Manifest.FromMemoryDatabase(db).Serialize();
+            File.WriteAllText(inputPath + ".json", json);
+            return 0;
+        }
+
+        public static Command GetFileCommand()
+        {
+            Command cmd = new("manifest-file", "convert a downloaded raw manifest file to JSON");
+            Option<string> inputOption = new("--input")
+            {
+                Description = "Path to the raw manifest file",
+                Required = true
+            };
+            cmd.Options.Add(inputOption);
+            cmd.SetAction(async args =>
+            {
+                await InvokeFromFile(args.GetValue(inputOption));
+            });
+            return cmd;
+        }
     }
 }
