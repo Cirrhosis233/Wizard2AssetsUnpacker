@@ -4,12 +4,12 @@ using MessagePack;
 namespace Wizard2AssetsUnpacker.Models.Generated
 {
 
-    [MessagePackObject(false)]
     [MemoryTable("AchievementMaster")]
+    [MessagePackObject(false)]
     public class AchievementMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public int RewardType { get; set; }
@@ -25,8 +25,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class AdviceFaceMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public string TextId { get; set; }
         [Key(1)]
         public int[] FaceIndexes { get; set; }
@@ -36,8 +36,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AjitoGrade")]
     public class AjitoGrade
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Grade { get; set; }
         [Key(1)]
         public int CutsceneId { get; set; }
@@ -60,12 +60,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int ChairObjectId { get; set; }
     }
 
-    [MemoryTable("ArrangeLayoutDetail")]
     [MessagePackObject(false)]
+    [MemoryTable("ArrangeLayoutDetail")]
     public class ArrangeLayoutDetail
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int DetailId { get; set; }
         [SecondaryKey(5, 0)]
         [Key(1)]
@@ -103,8 +103,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [PrimaryKey(0)]
         [Key(0)]
         public int AttractionId { get; set; }
-        [Key(1)]
         [SecondaryKey(0, 0)]
+        [Key(1)]
         public int FloorObjectId { get; set; }
         [Key(2)]
         public int ArrangeLayoutId { get; set; }
@@ -123,12 +123,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     public enum AvatarEditTabType : uint { Head = 0, Eye = 1, Eyebrow = 2, Mouth = 4, Glasses = 5, Tops = 6, Bottoms = 7, Socks = 8, Shoes = 9, Smartphone = 10, Mustache = 11, Costume = 12, BodyShape = 100, BodyColor = 101, AvatarVoice = 150, CustomEmote = 200, StandIdle = 300, Run = 400, Jump = 500, Tackle = 600, AvatarStamp = 700, }
     public enum AvatarEditTabCategory : uint { BodyShape = 0, Face = 1, Costume = 2, Motion = 3, AvatarStamp = 4, }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarEditTabMaster")]
+    [MessagePackObject(false)]
     public class AvatarEditTabMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public AvatarEditTabType TabType { get; set; }
@@ -140,8 +140,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarAutoAnimMaster")]
     public class AvatarAutoAnimMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int AnimationId { get; set; }
         [Key(1)]
         public AvatarAutoAnimationType AnimationType { get; set; }
@@ -155,12 +155,14 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int EditTabId { get; set; }
         [Key(5)]
         public Single OptionAnimationSpeedRate { get; set; }
+        [Key(6)]
+        public string CySpringOverwriteKey { get; set; }
         [IgnoreMember]
         public AvatarEditTabMaster EditTabIdRef { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarBodyMaster")]
+    [MessagePackObject(false)]
     public class AvatarBodyMaster
     {
         [PrimaryKey(0)]
@@ -183,12 +185,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarCategoryMaster")]
     public class AvatarCategoryMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int CategoryId { get; set; }
         [SecondaryKey(5, 0)]
-        [NonUnique]
         [Key(1)]
+        [NonUnique]
         public AvatarPartsType PartsType { get; set; }
         [Key(2)]
         public string Name { get; set; }
@@ -200,12 +202,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public AvatarEditTabMaster EditTabIdRef { get; set; }
     }
 
-    [MemoryTable("AvatarColorCodeMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("AvatarColorCodeMaster")]
     public class AvatarColorCodeMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int ColorCodeId { get; set; }
         [Key(1)]
         public string ColorCode { get; set; }
@@ -213,12 +215,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string Name { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarColorMaster")]
+    [MessagePackObject(false)]
     public class AvatarColorMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int ColorId { get; set; }
         [Key(1)]
         public int MaskRColorCodeId { get; set; }
@@ -252,12 +254,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public AvatarColorCodeMaster ImageColorCodeIdRef { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarEmoteMaster")]
+    [MessagePackObject(false)]
     public class AvatarEmoteMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int EmoteId { get; set; }
         [Key(1)]
         public int Type { get; set; }
@@ -281,8 +283,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsBottoms")]
     public class AvatarPartsBottoms
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -298,12 +300,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int SortPriority { get; set; }
     }
 
-    [MemoryTable("AvatarPartsColorRewardMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("AvatarPartsColorRewardMaster")]
     public class AvatarPartsColorRewardMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int AvatarId { get; set; }
@@ -336,8 +338,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class AvatarSizeMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int SizeId { get; set; }
         [Key(1)]
         public Single Value { get; set; }
@@ -345,12 +347,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string Name { get; set; }
     }
 
-    [MemoryTable("AvatarPartsCostume")]
     [MessagePackObject(false)]
+    [MemoryTable("AvatarPartsCostume")]
     public class AvatarPartsCostume
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -383,8 +385,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsEye")]
     public class AvatarPartsEye
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -404,8 +406,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsEyebrow")]
     public class AvatarPartsEyebrow
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -421,8 +423,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class AvatarPartsGlasses
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -442,8 +444,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsHead")]
     public class AvatarPartsHead
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -459,8 +461,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsMouth")]
     public class AvatarPartsMouth
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -472,12 +474,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int SortPriority { get; set; }
     }
 
-    [MemoryTable("AvatarPartsMustache")]
     [MessagePackObject(false)]
+    [MemoryTable("AvatarPartsMustache")]
     public class AvatarPartsMustache
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -491,8 +493,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarPartsShoes")]
     public class AvatarPartsShoes
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -529,12 +531,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int SortPriority { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarPartsSocks")]
+    [MessagePackObject(false)]
     public class AvatarPartsSocks
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -554,8 +556,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class AvatarPartsTops
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int AvatarId { get; set; }
         [Key(1)]
         public string AvatarFileName { get; set; }
@@ -571,12 +573,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int SortPriority { get; set; }
     }
 
-    [MemoryTable("AvatarSoundCategory")]
     [MessagePackObject(false)]
+    [MemoryTable("AvatarSoundCategory")]
     public class AvatarSoundCategory
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int SoundCategoryId { get; set; }
         [Key(1)]
         public int Priority { get; set; }
@@ -601,12 +603,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId LocalizedDescription { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("BaseCardMaster")]
+    [MessagePackObject(false)]
     public class BaseCardMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int BaseCardId { get; set; }
         [Key(1)]
         public int Type { get; set; }
@@ -628,14 +630,16 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int[] RelatedBaseCardIds { get; set; }
         [Key(10)]
         public int[] SpecificEffectCardIds { get; set; }
+        [Key(11)]
+        public int[] FaithRelatedBaseCardIds { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("BasePuzzleMaster")]
+    [MessagePackObject(false)]
     public class BasePuzzleMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string QuestName { get; set; }
@@ -649,12 +653,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int PuzzleBattleMasterId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("BattleAchievementType")]
+    [MessagePackObject(false)]
     public class BattleAchievementType
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string Name { get; set; }
@@ -713,8 +717,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("BattleLogInfoMaster")]
     public class BattleLogInfoMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string _Text { get; set; }
@@ -737,14 +741,14 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string TextId { get; set; }
         [Key(1)]
         public int FaceIndex { get; set; }
-        [SecondaryKey(4, 0)]
         [Key(2)]
+        [SecondaryKey(4, 0)]
         [NonUnique]
         public bool IsWin { get; set; }
     }
 
-    [MemoryTable("BattleTimeSetting")]
     [MessagePackObject(false)]
+    [MemoryTable("BattleTimeSetting")]
     public class BattleTimeSetting
     {
         [PrimaryKey(0)]
@@ -755,8 +759,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum BattleTutorialSkipType : uint { None = 0, Skip = 1, SkipShowClear = 2, }
 
-    [MessagePackObject(false)]
     [MemoryTable("BattleTutorial")]
+    [MessagePackObject(false)]
     public class BattleTutorial
     {
         [PrimaryKey(0)]
@@ -811,18 +815,18 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(24)]
         public bool IsUseStartCutin { get; set; }
     }
-    public enum BattleTutorialCommandType : uint { Null = 0, CardPlay = 1, WaitTime = 2, WaitTurnStartDrawEnd = 3, DialogTips = 4, TurnEnd = 5, Attack = 6, Activation = 7, Evolve = 8, FocusHand = 9, MaskHand = 10, MaskTurnEnd = 11, MaskPP = 12, MaskLeader = 13, MaskFieldStatus = 14, WaitMulliganStart = 15, MulliganChange = 16, MulliganEnd = 17, MaskAllyFieldAndOppoField = 18, MaskMulliganEnd = 19, ExtraPP = 20, MaskField = 21, CursorHand = 22, CursorField = 23, FocusHandLock = 24, MaskEvolve = 25, CursorMulligan = 26, MaskSpellBoostButton = 27, SelectCard = 28, CloseCardDetail = 29, OpenCloseCardDetailLock = 30, OpenCardDetail = 31, OpenFusion = 32, SelectFusionCard = 33, DecideFusion = 34, SelectMode = 35, SelectChoice = 36, MulliganBG = 37, PushSpellBoostButton = 38, MaskHandCost = 39, MaskExtraPP = 40, MaskHandAndPP = 41, MaskCemeteryUI = 42, NoUse011 = 43, NoUse012 = 44, NoUse013 = 45, NoUse014 = 46, NoUse015 = 47, CursorEvolveOrb = 48, WaitDirectBattleStart = 49, WaitTurnStartEnd = 50, PassAndWait = 51, Result = 52, Emote = 53, CharaMessage = 54, MaskLeaderLife = 55, MaskMulligan = 56, BG = 57, NoUse20 = 58, NoUse21 = 59, NoUse22 = 60, PlayFinishMulligan = 61, MaskMode = 62, MaskCardDetail = 63, MaskActivationButton = 64, MaskFusionButton = 65, MaskFusionDecideButton = 66, MaskCrest = 67, WaitVfxAndTime = 68, MaskMulliganCard = 69, MaskCardCounter = 70, Introduction = 71, MaskPuzzle = 72, MaskReset = 73, }
+    public enum BattleTutorialCommandType : uint { Null = 0, CardPlay = 1, WaitTime = 2, WaitTurnStartDrawEnd = 3, DialogTips = 4, TurnEnd = 5, Attack = 6, Activation = 7, Evolve = 8, FocusHand = 9, MaskHand = 10, MaskTurnEnd = 11, MaskPP = 12, MaskLeader = 13, MaskFieldStatus = 14, WaitMulliganStart = 15, MulliganChange = 16, MulliganEnd = 17, MaskAllyFieldAndOppoField = 18, MaskMulliganEnd = 19, ExtraPP = 20, MaskField = 21, CursorHand = 22, CursorField = 23, FocusHandLock = 24, MaskEvolve = 25, CursorMulligan = 26, MaskSpellBoostButton = 27, SelectCard = 28, CloseCardDetail = 29, OpenCloseCardDetailLock = 30, OpenCardDetail = 31, OpenFusion = 32, SelectFusionCard = 33, DecideFusion = 34, SelectModeOrChoice = 35, NoUse010 = 36, MulliganBG = 37, PushSpellBoostButton = 38, MaskHandCost = 39, MaskExtraPP = 40, MaskHandAndPP = 41, MaskCemeteryUI = 42, NoUse011 = 43, NoUse012 = 44, NoUse013 = 45, NoUse014 = 46, NoUse015 = 47, CursorEvolveOrb = 48, WaitDirectBattleStart = 49, WaitTurnStartEnd = 50, PassAndWait = 51, Result = 52, Emote = 53, CharaMessage = 54, MaskLeaderLife = 55, MaskMulligan = 56, BG = 57, NoUse20 = 58, NoUse21 = 59, NoUse22 = 60, PlayFinishMulligan = 61, MaskMode = 62, MaskCardDetail = 63, MaskActivationButton = 64, MaskFusionButton = 65, MaskFusionDecideButton = 66, MaskCrest = 67, WaitVfxAndTime = 68, MaskMulliganCard = 69, MaskCardCounter = 70, Introduction = 71, MaskPuzzle = 72, MaskReset = 73, }
 
-    [MessagePackObject(false)]
     [MemoryTable("BattleTutorialCommand")]
+    [MessagePackObject(false)]
     public class BattleTutorialCommand
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
-        [SecondaryKey(5, 0)]
-        [NonUnique]
         [Key(1)]
+        [NonUnique]
+        [SecondaryKey(5, 0)]
         public int CommandGroup { get; set; }
         [Key(2)]
         public BattleTutorialCommandType CommandType { get; set; }
@@ -842,8 +846,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string Param7 { get; set; }
     }
 
-    [MemoryTable("BattleTutorialMenuList")]
     [MessagePackObject(false)]
+    [MemoryTable("BattleTutorialMenuList")]
     public class BattleTutorialMenuList
     {
         [PrimaryKey(0)]
@@ -863,22 +867,22 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string BannerPath { get; set; }
     }
 
-    [MemoryTable("BingoMissionLineMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("BingoMissionLineMaster")]
     public class BingoMissionLineMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
-        [Key(1)]
-        [NonUnique]
         [SecondaryKey(5, 0)]
         [SecondaryKey(0, 0)]
+        [Key(1)]
+        [NonUnique]
         public int SheetId { get; set; }
+        [NonUnique]
         [SecondaryKey(6, 0)]
         [SecondaryKey(0, 0)]
         [Key(2)]
-        [NonUnique]
         public int Line { get; set; }
         [Key(3)]
         public string RewardNameTextId { get; set; }
@@ -886,25 +890,25 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string ImagePath { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("BingoMissionMaster")]
+    [MessagePackObject(false)]
     public class BingoMissionMaster
     {
         [PrimaryKey(0)]
         [Key(0)]
         public int Id { get; set; }
         [NonUnique]
-        [SecondaryKey(0, 0)]
         [SecondaryKey(5, 0)]
+        [SecondaryKey(0, 0)]
         [Key(1)]
         public int SheetId { get; set; }
+        [Key(2)]
+        [SecondaryKey(0, 0)]
         [NonUnique]
         [SecondaryKey(6, 0)]
-        [SecondaryKey(0, 0)]
-        [Key(2)]
         public int Position { get; set; }
-        [SecondaryKey(1, 0)]
         [Key(3)]
+        [SecondaryKey(1, 0)]
         public int AchieveCondition { get; set; }
         [Key(4)]
         public int AchieveConditionDetailId { get; set; }
@@ -916,18 +920,18 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string MissionNameTextId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("BoxGrade")]
+    [MessagePackObject(false)]
     public class BoxGrade
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
+        [SecondaryKey(0, 0)]
         [Key(1)]
-        [SecondaryKey(0, 0)]
         public int Round { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(2)]
+        [SecondaryKey(0, 0)]
         public int Tier { get; set; }
         [Key(3)]
         [SecondaryKey(0, 0)]
@@ -1067,12 +1071,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("CardMaster")]
     public class CardMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int CardId { get; set; }
-        [NonUnique]
         [Key(1)]
         [SecondaryKey(6, 0)]
+        [NonUnique]
         public int BaseCardId { get; set; }
         [Key(2)]
         public int CardResourceId { get; set; }
@@ -1092,15 +1096,15 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int PreConvertId { get; set; }
         [Key(10)]
         public int LeaderAreaOwnerId { get; set; }
-        [Key(11)]
         [SecondaryKey(0, 0)]
+        [Key(11)]
         public string HashId { get; set; }
         [IgnoreMember]
         public CardResourceMaster CardResourceIdRef { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("CardStyleResource")]
+    [MessagePackObject(false)]
     public class CardStyleResource
     {
         [SecondaryKey(0, 0)]
@@ -1148,8 +1152,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum CardTextPhraseDisplay : uint { Always = 1, OnlyBattle = 2, OnlyHand = 3, OnlyField = 4, }
 
-    [MessagePackObject(false)]
     [MemoryTable("CardTextPhrase")]
+    [MessagePackObject(false)]
     public class CardTextPhrase
     {
         [Key(0)]
@@ -1167,17 +1171,17 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("CardVoiceIgnoreMaster")]
     public class CardVoiceIgnoreMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public string VoiceId { get; set; }
     }
 
-    [MemoryTable("CollectionNoBlankStyle")]
     [MessagePackObject(false)]
+    [MemoryTable("CollectionNoBlankStyle")]
     public class CollectionNoBlankStyle
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int StyleId { get; set; }
         [Key(1)]
         public string Name { get; set; }
@@ -1187,12 +1191,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class CutsceneMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [SecondaryKey(5, 0)]
-        [Key(1)]
         [NonUnique]
+        [Key(1)]
         public int WatchType { get; set; }
         [Key(2)]
         public string StartDate { get; set; }
@@ -1259,8 +1263,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string EndDate { get; set; }
     }
 
-    [MemoryTable("DegreeCategotyMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("DegreeCategotyMaster")]
     public class DegreeCategotyMaster
     {
         [PrimaryKey(0)]
@@ -1274,8 +1278,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("DegreeMaster")]
     public class DegreeMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int OrderNumber { get; set; }
@@ -1297,15 +1301,15 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("EmblemCategotyMaster")]
     public class EmblemCategotyMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int CategoryId { get; set; }
         [Key(1)]
         public string CategoryName { get; set; }
     }
 
-    [MemoryTable("EmblemMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("EmblemMaster")]
     public class EmblemMaster
     {
         [Key(0)]
@@ -1329,12 +1333,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int SeriesId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("EmoteColorChange")]
+    [MessagePackObject(false)]
     public class EmoteColorChange
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int EmoteId { get; set; }
         [Key(1)]
         public string MaterialName { get; set; }
@@ -1342,16 +1346,16 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string[] Color { get; set; }
     }
 
-    [MemoryTable("ExchangeTicketRewardMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("ExchangeTicketRewardMaster")]
     public class ExchangeTicketRewardMaster
     {
         [PrimaryKey(0)]
         [Key(0)]
         public int Id { get; set; }
         [NonUnique]
-        [Key(1)]
         [SecondaryKey(5, 0)]
+        [Key(1)]
         public int ItemId { get; set; }
         [Key(2)]
         public int GroupId { get; set; }
@@ -1363,12 +1367,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int MessageId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("ExticketResourceMaster")]
+    [MessagePackObject(false)]
     public class ExticketResourceMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int ItemId { get; set; }
         [Key(1)]
         public int CardResourceId { get; set; }
@@ -1383,18 +1387,29 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(6)]
         public Single OffsetNormalY { get; set; }
     }
-    public enum FirstTipsType : uint { Image = 0, TextOnly = 1, Cut = 2, }
 
     [MessagePackObject(false)]
+    [MemoryTable("FaithAcquiredAbilityText")]
+    public class FaithAcquiredAbilityText
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int BaseCardId { get; set; }
+        [Key(1)]
+        public string[] AcquiredAbilityDesc { get; set; }
+    }
+    public enum FirstTipsType : uint { Image = 0, TextOnly = 1, Cut = 2, }
+
     [MemoryTable("FirstTipsMaster")]
+    [MessagePackObject(false)]
     public class FirstTipsMaster
     {
         [PrimaryKey(0)]
         [Key(0)]
         public int Id { get; set; }
-        [SecondaryKey(4, 0)]
-        [NonUnique]
         [Key(1)]
+        [NonUnique]
+        [SecondaryKey(4, 0)]
         public int Group { get; set; }
         [Key(2)]
         public string Comment { get; set; }
@@ -1410,8 +1425,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class FurnitureObjectMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int MetaverseObjectId { get; set; }
         [Key(1)]
         public int[] PlaceableSeriesIds { get; set; }
@@ -1419,8 +1434,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int FurnitureType { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("GuildAchievementMaster")]
+    [MessagePackObject(false)]
     public class GuildAchievementMaster
     {
         [Key(0)]
@@ -1434,8 +1449,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId DescriptionText { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("GuildAchievementReward")]
+    [MessagePackObject(false)]
     public class GuildAchievementReward
     {
         [PrimaryKey(0)]
@@ -1444,15 +1459,15 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [SecondaryKey(0, 0)]
         [Key(1)]
         public int RewardType { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(2)]
+        [SecondaryKey(0, 0)]
         public int RewardDetailId { get; set; }
         [Key(3)]
         public int AchievementId { get; set; }
     }
 
-    [MemoryTable("GuildFrameMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("GuildFrameMaster")]
     public class GuildFrameMaster
     {
         [Key(0)]
@@ -1485,12 +1500,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId UnlockText { get; set; }
     }
 
-    [MemoryTable("GuildMissionName")]
     [MessagePackObject(false)]
+    [MemoryTable("GuildMissionName")]
     public class GuildMissionName
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int MissionId { get; set; }
         [Key(1)]
         public string _MissionName { get; set; }
@@ -1499,8 +1514,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum GuildTagLookType : uint { Normal = 0, Bronze = 1, Silver = 2, Gold = 3, }
 
-    [MemoryTable("GuildTagMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("GuildTagMaster")]
     public class GuildTagMaster
     {
         [PrimaryKey(0)]
@@ -1514,8 +1529,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId NameTextId { get; set; }
     }
 
-    [MemoryTable("HighPremiumCard")]
     [MessagePackObject(false)]
+    [MemoryTable("HighPremiumCard")]
     public class HighPremiumCard
     {
         [PrimaryKey(0)]
@@ -1541,8 +1556,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public Single EvolvedOffsetY { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("HomeIllustrationMaster")]
+    [MessagePackObject(false)]
     public class HomeIllustrationMaster
     {
         [Key(0)]
@@ -1557,12 +1572,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum ParkVenue : uint { Lobby = 0, GuildLounge = 1, Space = 2, }
 
-    [MemoryTable("HomeParkButtonAd")]
     [MessagePackObject(false)]
+    [MemoryTable("HomeParkButtonAd")]
     public class HomeParkButtonAd
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int HomeParkButtonAdId { get; set; }
         [Key(1)]
         public int CampaignType { get; set; }
@@ -1578,17 +1593,17 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string _FooterBalloonText { get; set; }
     }
 
-    [MemoryTable("HouseActivityObjMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("HouseActivityObjMaster")]
     public class HouseActivityObjMaster
     {
         [SecondaryKey(0, 0)]
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int HouseActivityObjId { get; set; }
+        [NonUnique]
         [SecondaryKey(0, 0)]
         [Key(1)]
-        [NonUnique]
         [SecondaryKey(5, 0)]
         public int HouseSetId { get; set; }
         [Key(2)]
@@ -1631,17 +1646,17 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string ReleaseConditionTextId { get; set; }
     }
 
-    [MemoryTable("HouseCameraPosMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("HouseCameraPosMaster")]
     public class HouseCameraPosMaster
     {
-        [Key(0)]
-        [PrimaryKey(0)]
         [SecondaryKey(0, 0)]
+        [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
-        [Key(1)]
         [NonUnique]
         [SecondaryKey(0, 0)]
+        [Key(1)]
         [SecondaryKey(5, 0)]
         public int HouseSetId { get; set; }
         [Key(2)]
@@ -1663,13 +1678,13 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     public class HouseEditableObjMaster
     {
         [Key(0)]
-        [PrimaryKey(0)]
         [SecondaryKey(0, 0)]
+        [PrimaryKey(0)]
         public int HouseEditableObjId { get; set; }
-        [SecondaryKey(5, 0)]
-        [Key(1)]
         [NonUnique]
         [SecondaryKey(0, 0)]
+        [Key(1)]
+        [SecondaryKey(5, 0)]
         public int HouseSetId { get; set; }
         [Key(2)]
         public int DisplayIndex { get; set; }
@@ -1735,8 +1750,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class ItemMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int ItemId { get; set; }
         [Key(1)]
         public int ItemType { get; set; }
@@ -1744,18 +1759,18 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string ThumbnailPath { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("LeaderSkinMaster")]
+    [MessagePackObject(false)]
     public class LeaderSkinMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int LeaderSkinId { get; set; }
         [Key(1)]
         public string LeaderSkinName { get; set; }
-        [NonUnique]
-        [SecondaryKey(5, 0)]
         [Key(2)]
+        [SecondaryKey(5, 0)]
+        [NonUnique]
         public int ClassId { get; set; }
         [Key(3)]
         public int EmoteId { get; set; }
@@ -1767,12 +1782,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int StartCutinId { get; set; }
     }
 
-    [MemoryTable("LobbyEventSchedule")]
     [MessagePackObject(false)]
+    [MemoryTable("LobbyEventSchedule")]
     public class LobbyEventSchedule
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int EventId { get; set; }
         [Key(1)]
         public int EventType { get; set; }
@@ -1831,12 +1846,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string BannerImg { get; set; }
     }
 
-    [MemoryTable("LobbyTreasureBoxQuestMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("LobbyTreasureBoxQuestMaster")]
     public class LobbyTreasureBoxQuestMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [SecondaryKey(5, 0)]
         [Key(1)]
@@ -1862,16 +1877,16 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int RewardNumber { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("LobbyTreasureBoxQuestWeeklyPointReward")]
+    [MessagePackObject(false)]
     public class LobbyTreasureBoxQuestWeeklyPointReward
     {
         [Key(0)]
         [PrimaryKey(0)]
         public int Id { get; set; }
-        [Key(1)]
-        [NonUnique]
         [SecondaryKey(5, 0)]
+        [NonUnique]
+        [Key(1)]
         public int ScheduleId { get; set; }
         [Key(2)]
         public int Point { get; set; }
@@ -1883,8 +1898,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int RewardNumber { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MasterTextLabel")]
+    [MessagePackObject(false)]
     public class MasterTextLabel
     {
         [Key(0)]
@@ -1894,8 +1909,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string Text { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MetaverseBgmMaster")]
+    [MessagePackObject(false)]
     public class MetaverseBgmMaster
     {
         [PrimaryKey(0)]
@@ -1914,14 +1929,14 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class MetaverseConcierge
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [SecondaryKey(0, 0)]
         [Key(1)]
         public int NpcId { get; set; }
-        [Key(2)]
         [SecondaryKey(0, 0)]
+        [Key(2)]
         public ConciergeTextUsageType UsageType { get; set; }
         [SecondaryKey(0, 0)]
         [Key(3)]
@@ -1937,8 +1952,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class MetaverseGateMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [SecondaryKey(4, 0)]
         [Key(1)]
@@ -1957,18 +1972,35 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(7)]
         public Single CameraV { get; set; }
     }
+
+    [MessagePackObject(false)]
+    [MemoryTable("MetaverseIllustration")]
+    public class MetaverseIllustration
+    {
+        [PrimaryKey(0)]
+        [Key(0)]
+        public int Id { get; set; }
+        [Key(1)]
+        public string Name { get; set; }
+        [Key(2)]
+        public string IllustNameTextId { get; set; }
+        [Key(3)]
+        public string IllustImagePath { get; set; }
+        [Key(4)]
+        public string IllustThumbnailPath { get; set; }
+    }
     public enum LobbyCardEssentialIdType : uint { Card = 1, Illustration = 2, }
 
     [MessagePackObject(false)]
     [MemoryTable("MetaverseLobbyCard")]
     public class MetaverseLobbyCard
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [SecondaryKey(4, 0)]
-        [Key(1)]
         [NonUnique]
+        [Key(1)]
         public int GroupId { get; set; }
         [Key(2)]
         public LobbyCardEssentialIdType ContentType { get; set; }
@@ -1976,8 +2008,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int DetailId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MetaverseMap")]
+    [MessagePackObject(false)]
     public class MetaverseMap
     {
         [PrimaryKey(0)]
@@ -2017,11 +2049,11 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(0)]
         [PrimaryKey(0)]
         public int SpotId { get; set; }
+        [Key(1)]
+        [SecondaryKey(4, 0)]
         [NonUnique]
         [NonUnique]
         [SecondaryKey(5, 0)]
-        [SecondaryKey(4, 0)]
-        [Key(1)]
         public int MapId { get; set; }
         [Key(2)]
         public string Name { get; set; }
@@ -2035,8 +2067,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public Single CameraH { get; set; }
         [Key(7)]
         public Single CameraV { get; set; }
-        [Key(8)]
         [NonUnique]
+        [Key(8)]
         [SecondaryKey(5, 0)]
         public MetaverseMapSpotType MapSpotType { get; set; }
         [Key(9)]
@@ -2047,8 +2079,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public Single OffsetY { get; set; }
     }
 
-    [MemoryTable("MetaverseMonitorContent")]
     [MessagePackObject(false)]
+    [MemoryTable("MetaverseMonitorContent")]
     public class MetaverseMonitorContent
     {
         [PrimaryKey(0)]
@@ -2078,8 +2110,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [PrimaryKey(0)]
         public int Id { get; set; }
         [NonUnique]
-        [SecondaryKey(5, 0)]
         [Key(1)]
+        [SecondaryKey(5, 0)]
         public int DetailId { get; set; }
         [Key(2)]
         public int[] MonitorContentIds { get; set; }
@@ -2090,8 +2122,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum MetaverseNpcType : uint { None = 0, Tutorial = 1, AreaWarp = 2, Achievement = 3, Conversation = 4, Shop = 5, GuildConcierge = 6, }
 
-    [MemoryTable("MetaverseNpc")]
     [MessagePackObject(false)]
+    [MemoryTable("MetaverseNpc")]
     public class MetaverseNpc
     {
         [PrimaryKey(0)]
@@ -2135,15 +2167,15 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class MetaverseNpcPlacement
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string PrefabName { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MetaverseObjectMaster")]
+    [MessagePackObject(false)]
     public class MetaverseObjectMaster
     {
         [PrimaryKey(0)]
@@ -2177,8 +2209,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("MetaverseTempleteMessage")]
     public class MetaverseTempleteMessage
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string TextId { get; set; }
@@ -2189,12 +2221,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     }
     public enum MetaverseTutorialStepType : uint { None = 0, PlayFirstMovie = 1, CreateAvatar = 2, UseTreasureBoxKey = 3, TutorialComplete = 4, OpenTreasureBoxResult = 5, }
 
-    [MemoryTable("MetaverseTutorial")]
     [MessagePackObject(false)]
+    [MemoryTable("MetaverseTutorial")]
     public class MetaverseTutorial
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public int SeasonId { get; set; }
@@ -2209,8 +2241,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("ModeSkillText")]
     public class ModeSkillText
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int CardId { get; set; }
         [PrimaryKey(0)]
         [Key(1)]
@@ -2224,12 +2256,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId ModeDesc { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MtvFestival")]
+    [MessagePackObject(false)]
     public class MtvFestival
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int FestivalId { get; set; }
         [Key(1)]
         public string LogoName { get; set; }
@@ -2266,12 +2298,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId Message { get; set; }
     }
 
-    [MemoryTable("MtvFestivalObjectColor")]
     [MessagePackObject(false)]
+    [MemoryTable("MtvFestivalObjectColor")]
     public class MtvFestivalObjectColor
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int TeamId { get; set; }
         [Key(1)]
         public Single[] TableColorParam0 { get; set; }
@@ -2291,8 +2323,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("MtvFestivalTeam")]
     public class MtvFestivalTeam
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int TeamId { get; set; }
         [Key(1)]
         public string _TeamName { get; set; }
@@ -2334,12 +2366,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string MonitorThumbImage { get; set; }
     }
 
-    [MemoryTable("MtvJumpGimmickMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("MtvJumpGimmickMaster")]
     public class MtvJumpGimmickMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int MetaverseObjectId { get; set; }
         [Key(1)]
         public int JumpUpValue { get; set; }
@@ -2347,20 +2379,20 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int MoveVelocityScaleUpValue { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MtvObjectDeployMaster")]
+    [MessagePackObject(false)]
     public class MtvObjectDeployMaster
     {
         [PrimaryKey(0)]
         [Key(0)]
         public int MetaverseObjectDeployId { get; set; }
         [SecondaryKey(5, 0)]
-        [Key(1)]
         [NonUnique]
+        [Key(1)]
         public int MapId { get; set; }
-        [SecondaryKey(6, 0)]
         [Key(2)]
         [NonUnique]
+        [SecondaryKey(6, 0)]
         public int MetaverseObjectId { get; set; }
         [Key(3)]
         public Single PositionX { get; set; }
@@ -2394,8 +2426,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("NpcAchievConditionMaster")]
     public class NpcAchievConditionMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int ConditionType { get; set; }
@@ -2444,12 +2476,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int RewardNumber { get; set; }
     }
 
-    [MemoryTable("PuzzleBattleMaster")]
     [MessagePackObject(false)]
+    [MemoryTable("PuzzleBattleMaster")]
     public class PuzzleBattleMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string WinConditionTextId { get; set; }
@@ -2463,8 +2495,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class PuzzleMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int SortType { get; set; }
@@ -2482,16 +2514,16 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int MissionId { get; set; }
     }
 
-    [MemoryTable("PuzzleTutorialCommand")]
     [MessagePackObject(false)]
+    [MemoryTable("PuzzleTutorialCommand")]
     public class PuzzleTutorialCommand
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
+        [Key(1)]
         [NonUnique]
         [SecondaryKey(5, 0)]
-        [Key(1)]
         public int CommandGroup { get; set; }
         [Key(2)]
         public BattleTutorialCommandType CommandType { get; set; }
@@ -2505,18 +2537,18 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string Param4 { get; set; }
     }
 
-    [MemoryTable("SceneTransition")]
     [MessagePackObject(false)]
+    [MemoryTable("SceneTransition")]
     public class SceneTransition
     {
         [Key(0)]
         public string RewardName { get; set; }
-        [SecondaryKey(5, 0)]
         [Key(1)]
         [NonUnique]
+        [SecondaryKey(5, 0)]
         public int RewardType { get; set; }
-        [Key(2)]
         [PrimaryKey(0)]
+        [Key(2)]
         public int RewardDetailIdMin { get; set; }
         [Key(3)]
         public int RewardDetailIdMax { get; set; }
@@ -2542,8 +2574,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     public enum BattleLogType : uint { Add = 0, AddWithoutTiming = 1, None = 2, }
     public enum SideLogType : uint { None = 0, AddCommon = 1, AddInvocation = 2, }
 
-    [MessagePackObject(false)]
     [MemoryTable("SkillMaster")]
+    [MessagePackObject(false)]
     public class SkillMaster
     {
         [PrimaryKey(0)]
@@ -2561,8 +2593,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     public enum EffectTiming : uint { Default = 0, Custom = 1, Each = 2, }
     public enum EffectPosition : uint { Default = 0, Center = 1, CenterAlly = 2, CenterOppo = 3, }
 
-    [MessagePackObject(false)]
     [MemoryTable("SkillResourceMaster")]
+    [MessagePackObject(false)]
     public class SkillResourceMaster
     {
         [PrimaryKey(0)]
@@ -2615,12 +2647,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string[] LowSkillFx { get; set; }
     }
 
-    [MemoryTable("Sleeve")]
     [MessagePackObject(false)]
+    [MemoryTable("Sleeve")]
     public class Sleeve
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int SleeveId { get; set; }
         [Key(1)]
         public string SleeveName { get; set; }
@@ -2642,8 +2674,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("SleeveCategotyMaster")]
     public class SleeveCategotyMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int CategoryId { get; set; }
         [Key(1)]
         public string CategoryName { get; set; }
@@ -2653,16 +2685,16 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("Stamp")]
     public class Stamp
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int Category { get; set; }
         [Key(2)]
         public string FileName { get; set; }
         [SecondaryKey(4, 0)]
-        [NonUnique]
         [Key(3)]
+        [NonUnique]
         public bool UseInBattle { get; set; }
         [Key(4)]
         public int SortOrderInBattle { get; set; }
@@ -2672,36 +2704,38 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId LocalizedName { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("StampCategory")]
+    [MessagePackObject(false)]
     public class StampCategory
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public string FileName { get; set; }
     }
 
-    [MemoryTable("Story")]
     [MessagePackObject(false)]
+    [MemoryTable("Story")]
     public class Story
     {
         [Key(0)]
         [PrimaryKey(0)]
         public int StoryId { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(1)]
+        [SecondaryKey(0, 0)]
         public int SectionId { get; set; }
         [Key(2)]
         [SecondaryKey(0, 0)]
         public int EpisodeId { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(3)]
+        [SecondaryKey(0, 0)]
         public int ChapterId { get; set; }
         [Key(4)]
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
         [Key(5)]
+        public int AfterOrderId { get; set; }
+        [Key(6)]
         public string StartDate { get; set; }
     }
 
@@ -2709,14 +2743,14 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("StoryBattleSetting")]
     public class StoryBattleSetting
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int SectionId { get; set; }
         [PrimaryKey(0)]
         [Key(1)]
         public int EpisodeId { get; set; }
-        [PrimaryKey(0)]
         [Key(2)]
+        [PrimaryKey(0)]
         public int ChapterId { get; set; }
         [Key(3)]
         public int AvailableDeckClassId { get; set; }
@@ -2728,8 +2762,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class StoryBattleTalkEvent
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int StoryId { get; set; }
         [Key(1)]
         [PrimaryKey(0)]
@@ -2749,14 +2783,14 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(0)]
         [PrimaryKey(0)]
         public int Id { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(1)]
+        [SecondaryKey(0, 0)]
         public int SectionId { get; set; }
         [Key(2)]
         [SecondaryKey(0, 0)]
         public int EpisodeId { get; set; }
-        [SecondaryKey(0, 0)]
         [Key(3)]
+        [SecondaryKey(0, 0)]
         public int ChapterId { get; set; }
         [Key(4)]
         public string ChapterSummaryBgPath { get; set; }
@@ -2776,13 +2810,13 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         [Key(0)]
         public int Id { get; set; }
         [Key(1)]
-        [SecondaryKey(5, 0)]
         [NonUnique]
+        [SecondaryKey(5, 0)]
         public int SectionId { get; set; }
         [NonUnique]
-        [SecondaryKey(5, 0)]
-        [SecondaryKey(0, 0)]
         [Key(2)]
+        [SecondaryKey(0, 0)]
+        [SecondaryKey(5, 0)]
         public int EpisodeId { get; set; }
         [Key(3)]
         public string EpisodeTitleId { get; set; }
@@ -2802,32 +2836,34 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string SoloplayButtonBgPrefabPath { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("StoryHint")]
+    [MessagePackObject(false)]
     public class StoryHint
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int SectionId { get; set; }
-        [PrimaryKey(0)]
         [Key(1)]
-        public int EpisodeId { get; set; }
-        [Key(2)]
         [PrimaryKey(0)]
+        public int EpisodeId { get; set; }
+        [PrimaryKey(0)]
+        [Key(2)]
         public int ChapterId { get; set; }
         [Key(3)]
         public int HintCount { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("SupplementText")]
+    [MessagePackObject(false)]
     public class SupplementText
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int BaseCardId { get; set; }
         [Key(1)]
         public string SupplementDesc { get; set; }
+        [Key(2)]
+        public bool IsDisplayFusionIngredient { get; set; }
     }
 
     [MemoryTable("TwopickrankingMaster")]
@@ -2849,12 +2885,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public MasterTextId EndName { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AiMaster")]
+    [MessagePackObject(false)]
     public class AiMaster
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
     }
 
@@ -2869,12 +2905,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public string ClothSeType { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("AvatarOverlapMaster")]
+    [MessagePackObject(false)]
     public class AvatarOverlapMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int PrimaryId { get; set; }
         [Key(1)]
         public int CategoryId { get; set; }
@@ -2888,8 +2924,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class AvatarPartsPatternMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int PatternId { get; set; }
         [Key(1)]
         public string Name { get; set; }
@@ -2899,8 +2935,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarStepMaterials")]
     public class AvatarStepMaterials
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public string Material { get; set; }
@@ -2910,8 +2946,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("AvatarStepSeTypeMaster")]
     public class AvatarStepSeTypeMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public string StepSeType { get; set; }
@@ -2936,8 +2972,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("ChatStampMaster")]
     public class ChatStampMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int ChatStampId { get; set; }
         [Key(1)]
         public string MessageTextId { get; set; }
@@ -2947,19 +2983,19 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class CountryData
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int CountryId { get; set; }
         [Key(1)]
         public string CategoryTextId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("DefaultAjitoHologram")]
+    [MessagePackObject(false)]
     public class DefaultAjitoHologram
     {
-        [PrimaryKey(0)]
         [Key(0)]
+        [PrimaryKey(0)]
         public int Id { get; set; }
         [Key(1)]
         public int SlotNum { get; set; }
@@ -2975,12 +3011,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class LobbyTreasureBoxQuestDailyRewardMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
-        [Key(1)]
         [SecondaryKey(5, 0)]
         [NonUnique]
+        [Key(1)]
         public int ScheduleId { get; set; }
         [Key(2)]
         public int Point { get; set; }
@@ -2992,8 +3028,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int RewardNumber { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("LobbyTreasureBoxRewardGroup")]
+    [MessagePackObject(false)]
     public class LobbyTreasureBoxRewardGroup
     {
         [Key(0)]
@@ -3036,8 +3072,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public int ColorId { get; set; }
     }
 
-    [MessagePackObject(false)]
     [MemoryTable("MissionMaster")]
+    [MessagePackObject(false)]
     public class MissionMaster
     {
         [Key(0)]
@@ -3058,8 +3094,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("ParkDialog")]
     public class ParkDialog
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int ParkDialogId { get; set; }
         [Key(1)]
         public int EventId { get; set; }
@@ -3073,8 +3109,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public TransitionType TransitionType { get; set; }
     }
 
-    [MemoryTable("Rank")]
     [MessagePackObject(false)]
+    [MemoryTable("Rank")]
     public class Rank
     {
         [PrimaryKey(0)]
@@ -3098,8 +3134,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MemoryTable("SampleA")]
     public class SampleA
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int SampleId { get; set; }
         [Key(1)]
         public string Name { get; set; }
@@ -3111,12 +3147,12 @@ namespace Wizard2AssetsUnpacker.Models.Generated
         public Single DurationSec { get; set; }
     }
 
-    [MemoryTable("StoryRelease")]
     [MessagePackObject(false)]
+    [MemoryTable("StoryRelease")]
     public class StoryRelease
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int Id { get; set; }
         [Key(1)]
         public int SectionId { get; set; }
@@ -3161,8 +3197,8 @@ namespace Wizard2AssetsUnpacker.Models.Generated
     [MessagePackObject(false)]
     public class TransitionRankMaster
     {
-        [Key(0)]
         [PrimaryKey(0)]
+        [Key(0)]
         public int TransitionRankId { get; set; }
         [Key(1)]
         public string IconName { get; set; }
